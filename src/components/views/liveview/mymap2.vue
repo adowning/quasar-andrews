@@ -5,7 +5,7 @@
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         attribution="&copy; <a href=&#34;http://osm.org/copyright&#34;>OpenStreetMap</a> contributors"
       ></vmap-tile-layer>
-      <vmap-marker v-for="markerPosition in markers" :position="markerPosition"></vmap-marker>
+      <vmap-marker v-for="markerPosition in markers" :position="markerPosition" :tabletId="markerPosition"></vmap-marker>
       <vmap-layer-group>
         <vmap-geo-json :data="geoJson" :feature-style="geoJsonStyle"></vmap-geo-json>
         <vmap-circle :position="{lat: 49.614, lng: 6.084}" :radius="1000" :stroke="true" color="#990"></vmap-circle>
@@ -103,8 +103,10 @@ export default {
         lng: this.lng
       }
     },
-    markersTotal () {
-      return this.markers
+    tabletId () {
+      return {
+        tabletId: this.key
+      }
     },
     markersFiltered: function() {
       // return this.markers.sort(this.sort_by('msgTS', true, parseInt))

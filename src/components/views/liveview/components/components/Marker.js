@@ -19,6 +19,9 @@ export default {
       type: Object,
       required: true
     },
+    tabletId: {
+      required: true
+    },
     icon: {
       type: Leaflet.Icon,
       default () {
@@ -46,11 +49,17 @@ export default {
 
   mounted () {
     // passthru events
-    this.$marker.bindPopup("<b>Hello world!</b><br>I am a popup.").openPopup();
+    console.table(this.tabletId)
+console.log(this.tabletId.batt)
+    
+console.log(this.tabletId)
+    this.$marker.bindPopup("<b>Tablet ID:</b><br> " + this.tabletId.tst, {autoClose:false}).openPopup();
+    // this.$marker.bindTooltip("my tooltip text").openTooltip();
     const mapEvents = [
       'click', 'dblclick', 'mousedown', 'mouseover', 'mouseout', 'contextmenu', 'dragstart', 'drag', 'dragend',
       'move', 'add', 'remove', 'popupopen', 'popupopen'
     ]
+  
     mapEvents.forEach(eventName => this.$marker.on(eventName, ev => this.$emit(eventName, ev)))
   }
 }

@@ -11,7 +11,7 @@
   
   .component-vue-map {
     position: relative;
-    height: 300px;
+    height: 900px;
   }
 
   .component-vue-map .map-container {
