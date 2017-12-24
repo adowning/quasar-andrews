@@ -59,6 +59,12 @@ export default {
               faIcon: 'fa fa-home',
               materialIcon: 'home',
               name: 'Live View'
+            },
+            {
+              route: '/activityfeed',
+              faIcon: 'fa fa-home',
+              materialIcon: 'home',
+              name: 'Activity Feed'
             }
           ],
           show: true

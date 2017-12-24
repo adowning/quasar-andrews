@@ -27,10 +27,14 @@ export default new VueRouter({
         },
         {
             path: '/liveview',
-            component: load('views/liveview/mymap2'),
+            component: load('views/liveview/liveview'),
             meta: { name: 'Live view' }
         },
-
+        {
+            path: '/activityfeed',
+            component: load('views/activityfeed/activityfeed'),
+            meta: { name: 'Activity Feed' }
+        },
         { path: '/auth', component: load('Auth'), meta: { name: 'Form Login' } },
         {
             path: '/success',

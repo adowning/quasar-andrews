@@ -2,10 +2,10 @@
   <div class="layout-padding ">
     <div class="flex wrap gutter">
       <div class="flex wrap gutter">
-        <!-- <div class="width-4of5 sm-width-1of1"> -->
+        <div class="width-1of2 sm-width-1of1">
           <MyMap2>
           </MyMap2>
-        <!-- </div> -->
+        </div>
         <!-- <div id="map"></div> -->
 
       </div>
@@ -43,7 +43,7 @@ export default {
     // }
   },
   components: {
-     MyMap2
+    MyMap2
   },
   methods: {
     // search(terms, done) {
@@ -69,9 +69,4 @@ export default {
   }
 }
 </script>
-<style>
-#map {
-  height: 900px;
-  width: 900px;
-}
-</style>
+
