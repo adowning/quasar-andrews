@@ -1,8 +1,8 @@
 export const config = {
-  apiKey: 'AIzaSyAtAQsA7-max7T6WWK0Co079ew2mWp6kn8',
-  authDomain: 'triphin-ccbdb.firebaseapp.com',
-  databaseURL: 'https://triphin-ccbdb.firebaseio.com',
-  projectId: 'triphin-ccbdb',
-  storageBucket: 'triphin-ccbdb.appspot.com',
-  messagingSenderId: '395196543424'
+    apiKey: 'AIzaSyBEOwXK3CiV6ASIS66a7vicIbfHqAaLt1w',
+    databaseURL: 'https://andrews-test.firebaseio.com/',
+    authDomain: 'andrews-test.firebaseapp.com',
+    storageBucket: 'gs://andrews-test.appspot.com',
+    messagingSenderId: '759206729601',
+    projectId: 'andrews-test'
 }

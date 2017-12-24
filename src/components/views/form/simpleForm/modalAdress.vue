@@ -46,49 +46,51 @@
 </template>
 
 <script type="text/javascript">
-  /* eslint-disable */
-  import { Toast } from 'quasar'
-  import GMaps from 'gmaps'
+/* eslint-disable */
+import { Toast } from 'quasar'
+import GMaps from 'gmaps'
 
-  export default {
-    data () {
-      return {
-        map: ''
-      }
+export default {
+  data() {
+    return {
+      map: ''
+    }
+  },
+  props: ['user'],
+  methods: {
+    save() {
+      this.$http.jsonplaceholder
+        .patch(`users/${this.user.id}`, { address: this.user.address })
+        .then(response => {
+          Toast.create.positive('Updated successful!')
+        })
     },
-    props: ['user'],
-    methods: {
-      save () {
-        this.$http.jsonplaceholder
-          .patch(`users/${this.user.id}`, {address: this.user.address})
-          .then(response => { Toast.create.positive('Updated successful!') })
-      },
-      startMap () {
-        let vm = this
-        this.map = new GMaps({
-          el: '#map',
-          lat: parseFloat(this.user.address.geo.lat),
-          lng: parseFloat(this.user.address.geo.lng),
-          zoom: 3,
-          dblclick (e) {
-            vm.map.removeMarkers()
-            vm.addMarker(e.latLng.lat(), e.latLng.lng())
-          }
-        })
-        this.addMarker(this.user.address.geo.lat, this.user.address.geo.lng)
-      },
-      addMarker (lat, lng) {
-        this.map.addMarker({
-          lat: parseFloat(lat),
-          lng: parseFloat(lng)
-        })
-      }
+    startMap() {
+      let vm = this
+      this.map = new GMaps({
+        el: '#map',
+        lat: parseFloat(this.user.address.geo.lat),
+        lng: parseFloat(this.user.address.geo.lng),
+        zoom: 3,
+        dblclick(e) {
+          vm.map.removeMarkers()
+          vm.addMarker(e.latLng.lat(), e.latLng.lng())
+        }
+      })
+      this.addMarker(this.user.address.geo.lat, this.user.address.geo.lng)
+    },
+    addMarker(lat, lng) {
+      this.map.addMarker({
+        lat: parseFloat(lat),
+        lng: parseFloat(lng)
+      })
     }
   }
+}
 </script>
 <style scoped>
-  #map {
-    width: 300px !important;
-    height: 300px !important;
-  }
+#map {
+  width: 300px !important;
+  height: 300px !important;
+}
 </style>
