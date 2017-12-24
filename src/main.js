@@ -22,7 +22,8 @@ import { config } from './helpers/firebaseConfig'
 import 'font-awesome/css/font-awesome.css'
 import 'highlight/lib/vendor/highlight.js/styles/default.css'
 import 'dragula/dist/dragula.css'
-
+var VueFire = require("vuefire");
+Vue.use(VueFire);
 Vue.use(Vuelidate)
 Vue.use(Quasar) // Install Quasar Framework
 Vue.use(axios)

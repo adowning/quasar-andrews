@@ -17,9 +17,9 @@
         <button class="teal outline raised fit" @click="$refs.modal.close()">Close</button>
       </div>
     </div> -->
-    <marker v-for="(marker,key) in markersFiltered" :marker="marker">
+    <!-- <marker v-for="(marker,key) in markersFiltered" :marker="marker">
       {{marker}}
-    </marker>
+    </marker> -->
 
     <div id="mapx"></div>
   </div>
@@ -29,7 +29,7 @@
 /* eslint-disable */
 import { Toast } from 'quasar'
 import GMaps from 'gmaps'
-import marker from 'marker.vue'
+// import marker from 'marker.vue'
 
 // import firebase from 'firebase'
 import { fbdb, fbstorage, eventBus, fbauth } from '../../../main.js'
@@ -38,7 +38,7 @@ console.log(markersRef.limitToLast(20))
 export default {
   props: ['user'],
   components: {
-    marker: marker,
+    // marker: marker,
     Vue: Vue,
     uploadImage: uploadImage
   },

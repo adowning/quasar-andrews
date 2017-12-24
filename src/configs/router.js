@@ -27,7 +27,7 @@ export default new VueRouter({
         },
         {
             path: '/liveview',
-            component: load('views/liveview/liveview'),
+            component: load('views/liveview/mymap2'),
             meta: { name: 'Live view' }
         },
 

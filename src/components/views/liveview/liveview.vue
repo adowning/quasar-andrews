@@ -2,10 +2,10 @@
   <div class="layout-padding ">
     <div class="flex wrap gutter">
       <div class="flex wrap gutter">
-        <div class="width-4of5 sm-width-1of1">
-          <MyMap>
-          </MyMap>
-        </div>
+        <!-- <div class="width-4of5 sm-width-1of1"> -->
+          <MyMap2>
+          </MyMap2>
+        <!-- </div> -->
         <!-- <div id="map"></div> -->
 
       </div>
@@ -14,7 +14,7 @@
 </template>
 <script type="text/javascript">
 // import { Utils, Toast } from 'quasar'
-import MyMap from './mymap'
+import MyMap2 from './mymap2'
 import GMaps from 'gmaps'
 
 export default {
@@ -43,7 +43,7 @@ export default {
     // }
   },
   components: {
-    MyMap
+     MyMap2
   },
   methods: {
     // search(terms, done) {
@@ -65,13 +65,13 @@ export default {
     //     .then(response => {
     //       Toast.create.positive('Updated successful!')
     //     })
-    // }
+    // }//
   }
 }
 </script>
 <style>
 #map {
-  height: 300px;
-  width: 300px;
+  height: 900px;
+  width: 900px;
 }
 </style>
