@@ -26,13 +26,14 @@
       <div class="flex">
         <vmap :position="position" :zoom="zoom" @zoom="onZoom" @move="onMove">
           <vmap-tile-layer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" attribution="&copy; <a href=&#34;http://osm.org/copyright&#34;>OpenStreetMap</a> contributors"></vmap-tile-layer>
-          <vmap-marker v-for="markerPosition in markers" :position="markerPosition" :tabletId="markerPosition"></vmap-marker>
-          <vmap-layer-group>
+
+          <vmap-marker v-for="markerPosition in markers" :key="markerPosition.key" :position="markerPosition" :tabletId="markerPosition"></vmap-marker>
+          <!-- <vmap-layer-group>
             <vmap-geo-json :data="geoJson" :feature-style="geoJsonStyle"></vmap-geo-json>
             <vmap-circle :position="{lat: 49.614, lng: 6.084}" :radius="1000" :stroke="true" color="#990"></vmap-circle>
           </vmap-layer-group>
           <vmap-rectangle :bounds="[{lat: 49.614, lng: 6.084}, { lat: 49.62, lng: 6.118 }]"></vmap-rectangle>
-          <vmap-polyline :latlngs="[{lat: 49.614, lng: 6.084}, { lat: 49.62, lng: 6.118 }]"></vmap-polyline>
+          <vmap-polyline :latlngs="[{lat: 49.614, lng: 6.084}, { lat: 49.62, lng: 6.118 }]"></vmap-polyline> -->
         </vmap>
       </div>
     </div>

@@ -54,7 +54,7 @@
 <script>
 import { mapGetters } from 'vuex'
 // import { firebaseObj } from '../../config/firebaseConfig'
-import { fbdb, fbstorage, eventBus, fbauth } from '../../../main.js'
+import { fbdb, fbstorage, eventBus, fbauth } from '../../../../main.js'
 let _channelsRef = fbdb.ref('channels')
 let _messagesRef = fbdb.ref('messages')
 import mixin from '../mixins'
@@ -175,50 +175,3 @@ export default {
   }
 }
 </script>
-
-<style lang="scss" scoped>
-// @import '../../main.scss';
-
-.channels__list {
-  min-height: 100px;
-  max-height: 300px !important;
-  overflow-y: auto !important;
-  color: $color_shady_lady;
-}
-
-.channels__container ul {
-  margin: 0;
-  padding: 0;
-}
-
-.channels__item {
-  list-style: none;
-  cursor: pointer;
-  line-height: 30px;
-  border-radius: 2px;
-  padding-left: 12px;
-  font-size: 1.1em;
-  margin: 1px 0;
-}
-
-.channel__count {
-  float: right;
-}
-
-.channels__item:hover {
-  background-color: $color_smalt_blue;
-}
-
-.add_channel {
-  cursor: pointer;
-  color: $white;
-  position: absolute;
-  right: -65%;
-  opacity: 0.6;
-  top: 5%;
-  display: inline-block;
-}
-.add_channel:hover {
-  color: $white;
-}
-</style>
